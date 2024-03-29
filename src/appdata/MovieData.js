@@ -6,10 +6,11 @@ export default class MovieData {
 
 
     constructor() {
-        this.movieData = [];
-        this.reviewData = [];
+        //this.movieData = [];
+        this.reviewData = []; // For holding reviews submitted by app
     }
 
+    // Method to write review object into review collection
     submitReview(id, reviewObj) {
 
       let template = {
@@ -17,10 +18,12 @@ export default class MovieData {
         results: [reviewObj]
       }
 
+      // Check for existing reviews for current movie id
       let movieIndex = this.reviewData.findIndex(movie => {
         return movie.id === id;
       });
 
+      // If reviews exist for movie id, push only reviews object, else push whole template object
       if (movieIndex !== undefined && movieIndex > 0) {
         this.reviewData[movieIndex].results.push(reviewObj);
       } else {
@@ -29,14 +32,17 @@ export default class MovieData {
 
     }
 
+    // Configuration API provided by TMDB to assemble url path of resource
     configuration() {
         // Not implemented yet
     }
 
+    // Get list of currently playing movies
     getWhatsPlaying() { // Not implemented yet
         //let url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
     }
 
+    // Return collection of reviews recorded from form submissions
     getLocalReviews(movieID) {
       
       let movieIndex = this.reviewData.findIndex(movie => {
@@ -56,6 +62,7 @@ export default class MovieData {
 
     }
 
+    // API call to collect reviews for a movie ID
     async getReviews(id) {
         
         const apiUrl = `https://api.themoviedb.org/3/movie/${id}/reviews?language=en-US&page=1`;
@@ -96,7 +103,7 @@ export default class MovieData {
         return resourceURL;
     }
 
-    // Taken from TMDB API get request as a sample set of data. Configuration API is used for building URL path to resources.
+    // Taken from TMDB Configuration API get request as a sample set of data. Configuration API is used for building URL path to resources.
     getSampleConfiguration() {
         return {
             "images": {
