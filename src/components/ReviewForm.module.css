@@ -1,0 +1,179 @@
+:root {
+    --theme-main-color: rgb(9, 90, 204);
+    --theme-alt-color: rgba(240, 187, 39, 0.945);
+    --theme-accent-color: rgb(105, 105, 105, 1);
+    --theme-hover-color: white;
+    --theme-border-color: dimgrey;
+    --theme-gradient: linear-gradient(to right, rgba(0,0,0,1) 10%,rgba(80,80,80,1) 50%);
+}
+
+.main {
+    margin: auto;
+    margin-top: 1px;
+    margin-left: 3vw;
+    padding-top: 50px;
+    padding-left: 8vw;
+    padding-right: 3em;
+    scroll-snap-align: start;
+    left: 0;
+    text-align: center;
+    top: 0;
+    width: 92%;
+    height: 100%;
+    opacity: 1;
+    background: white;
+    display: block;
+    position: absolute;
+    z-index: 101;
+}
+
+.formDiv {
+    margin: auto;
+    margin-top: 0px;
+    padding-top: 0px;
+
+    h1 {
+        padding-top: 0px;
+        color: var(--theme-accent-color);
+    }
+    h4 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        color: red;
+    }
+
+    textarea {
+        width: 95%;
+        height: 8vh;
+        overflow-y: scroll;
+    }
+}
+
+.inputDiv {
+    margin: auto;
+    margin-bottom: 30px;
+
+    input {
+        width: 30vw;
+        margin: auto;
+    }
+
+    label {
+        display: none;
+    }
+}
+
+.starControl {
+    display: flex;
+    margin: auto;
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.star {
+    color: var(--theme-alt-color);
+}
+
+.dynamicStar {
+    color: var(--theme-alt-color);
+}
+
+@media only screen and (max-width: 575px) {
+    .main {
+        padding-top: 0vh;
+    }
+
+    .inputDiv {
+        label {
+            margin-right: 20px;
+        }
+        input {
+            width: 40vw;
+        }
+    }
+
+    .formDiv {
+        margin: auto;
+        
+        textarea {
+            width: 95%;
+            height: 6vh;
+            overflow-y: scroll;
+        }
+    }
+
+    .reviewButtons {
+        margin-right: 1em;
+        margin-left: 1em;
+        
+        margin-bottom: 1em;
+    }
+}
+
+@media only screen and (min-width: 575px) {
+    .main {
+        display: none;
+        width: 80%;
+    }
+
+    .inputDiv {
+        label {
+            display: none;
+        }
+
+        input {
+            width: 25vw;
+            margin: auto;
+        }
+    }
+
+    .reviewButtons {
+        margin-right: .1em;
+        margin-left: .1em;
+        
+        margin-bottom: .5em;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .main {
+        display: inherit;
+        width: 88%;
+        height: 46vh;
+    }
+
+    .inputDiv {
+        input {
+            width: 25vw;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+    .reviewButtons {
+        margin-right: 1em;
+        margin-left: 1em;
+        
+        margin-bottom: 1em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .main {
+        width: 95%;
+    }
+
+    .inputDiv {
+        label {
+            display: none;
+            margin-right: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .main {
+        width: 99%;
+    }
+}

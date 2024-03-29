@@ -1,0 +1,108 @@
+:root {
+    --theme-main-color: rgb(9, 90, 204);
+    --theme-alt-color: rgba(240, 187, 39, 0.945);
+    --theme-hover-color: white;
+    --theme-border-color: dimgrey;
+    --theme-gradient: linear-gradient(to right, rgba(0,0,0,1) 10%,rgba(80,80,80,1) 50%);
+}
+
+div {
+    color: var(--theme-main-color);
+}
+
+.slides {
+    max-width: 100%;
+    z-index: 1;
+}
+
+.showcaseCard {
+    margin: auto;
+    background-color: white;
+}
+
+@media only screen and (max-width: 800px) {
+        
+    .showcaseCard {
+        position: absolute;
+        text-align: center;
+        padding-top: 2em;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 2em;
+        visibility: hidden;
+        max-height: 0px;
+    }
+
+    .showcasePoster {
+        visibility: hidden;
+        max-height: 0px;
+    }
+
+    .showcaseTitle {
+        padding-bottom: .5em;
+    }
+        
+}
+    
+@media only screen and (min-width: 800px) {
+    
+    .showcaseCard {
+        position: absolute;
+        z-index: 101;
+        width: 75vw;
+        max-width: 960px;
+        
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+
+        border-style: solid;
+        border-radius: 1em;
+        border-color: rgb(80,80,80,100%);
+        
+        top: 15vw;
+        
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto;
+         
+    }
+    
+    .showcaseDetails {
+        margin: auto;
+        margin-top: 1em;
+        text-align: center;
+        margin-left: 5em;
+        margin-right: 5em;
+    }
+
+    .showcasePoster {
+        
+        max-width: 250px;
+        border-style: solid;
+        border-color: black;
+        border-radius: 1em;
+        margin-right: 5%;
+    }
+
+    .showcaseTitle {
+        max-width: 30vw;
+        padding-bottom: 20px;
+        color: rgb(80,80,80,100%);
+        margin: auto;
+    }
+
+    .showcaseOverview {
+        max-width: 35vw;     
+        max-height:100px;
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.extraControls {
+    visibility: hidden;
+}

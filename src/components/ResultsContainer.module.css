@@ -1,0 +1,248 @@
+:root {
+    --theme-main-color: rgb(9, 90, 204);
+    --theme-alt-color: rgba(240, 187, 39, 0.945);
+    --theme-hover-color: white;
+    --theme-border-color: dimgrey;
+    --theme-gradient: linear-gradient(to right, rgba(0,0,0,1) 10%,rgba(80,80,80,1) 50%);    
+}
+
+html{
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y proximity;
+    scroll-snap-stop: always;
+}
+
+div {
+    color: var(--theme-main-color);
+}
+
+.posterContainer {
+    position: relative;
+}
+
+.results {
+    background-color: white;
+}
+
+.showcaseCard {
+    margin: auto;
+    border-style: solid;
+    border-color: var(--theme-border-color);
+}
+
+.showcasePoster {
+    margin-left: 0px;
+    width: 100%;
+    scroll-snap-align: start;
+}
+
+.showcaseDetails {
+    margin: auto;
+    margin-top: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
+    scroll-snap-align: start;
+    
+}
+
+.showcaseTitle {
+    color: var(--theme-border-color);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.showcaseOverview {
+    text-align: start;
+    margin-bottom: 4em;
+}
+
+.ratingsCard {
+    
+    margin: auto;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: .1px;
+    border-color: gray;
+
+}
+
+.ratingsCardHeader {
+    color: var(--theme-alt-color);
+    display: flow-root;
+    border-style: solid;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1;
+    border-color: var(--theme-main-color);
+    width: 170px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-wrap: nowrap;
+}
+
+.starCount {
+    color: var(--theme-accent-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    vertical-align: bottom;
+}
+
+.reviews {
+    font-style: italic;
+    font-size: 12px;
+    text-align: justify;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: dimgrey;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 100px;
+}
+
+.extraControls {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 575px) {
+    
+    .showcaseCard {
+        margin: 0px;
+    }
+
+    .showcasePoster {
+        min-width: 100vw;
+    }
+    
+    .showcaseDetails {
+        margin: auto;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        padding-left: 3em;
+        padding-right: 3em;
+        padding-bottom: 2em;
+        position: relative;
+    }
+
+    .showcaseOverview {
+        max-height: 25rcap;
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;   
+        text-align: start;
+    }
+
+    .reviews {
+        height: 120px;
+    }
+
+    .ratingsCard {
+        display: inherit;
+    }
+
+    .ratingsCard:hover {
+        box-shadow: 2px 2px 10px 10px dimgray;
+        cursor: pointer;
+    }
+
+    .ratingsCard:active {
+        box-shadow: 2px 2px 10px 10px var(--theme-main-color);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 575px) {
+    
+    .ratingsCard {
+        display: none;
+    }
+
+    .posterContainer {
+        min-width: 450px;
+        max-width: 450px;
+    }
+
+    .showcaseOverview {
+        overflow: auto;
+        max-height: 300px;
+    }
+
+    .reviews {
+        overflow-y: scroll;
+        max-height: 13vh;
+        max-width: 49vw;
+        padding-right: 2em;
+    }
+    
+    .reviewDetails {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .ratingsCard {
+        display: inherit;
+        width: 25vw;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .ratingsCard {
+        display: inherit;
+        width: 20vw;
+    }
+
+    .showcaseDetails {
+        position: absolute;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .ratingsCard {
+        display: inherit;
+        width: 40vw;
+    }
+
+    .extraControls {
+        visibility: visible;
+        margin-top: 30px
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .ratingsCard {
+        display: inherit;
+        width: 45vw;
+        max-height: 240px;
+    }
+}
+
+@media only screen and (min-width: 9980px) {
+    .ratingsCard {
+        width: 60vw;
+    }
+}
+
+@media only screen and (min-width:  1100px) {
+    .ratingsCard {
+        height: 300px;
+        width: 50vw;
+    }
+
+    .reviews {
+        height: 230px;
+    }
+}
+
+@media only screen and (min-width:  1500px) {
+    .showcaseDetails {
+        margin: auto;
+        padding-left: 15rem;
+    }
+}

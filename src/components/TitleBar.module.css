@@ -1,0 +1,101 @@
+:root {
+    --theme-main-color: rgb(9, 90, 204);
+    --theme-alt-color: rgba(240, 187, 39, 0.945);
+    --theme-hover-color: white;
+    --theme-border-color: dimgrey;
+    --theme-gradient: linear-gradient(to right, rgba(0,0,0,1) 10%,rgba(80,80,80,1) 50%);
+}
+
+div {
+    color: var(--theme-main-color);
+}
+
+.searchForm {
+    background: grey;
+    position: absolute;
+    z-index: 109;
+    animation: Div-Show normal .2s linear;
+}
+
+.homeButton {
+    margin: 0;
+    padding: .5%;
+    color: var(--theme-main-color);
+    background-color: var(--theme-alt-color);
+    border-color: var(--theme-border-color);
+    border-width: 2px;
+    border-style: solid;
+    width: 25vw;
+}
+
+.searchButton {
+    margin: 0;
+    padding: .5%;
+    color: var(--theme-alt-color);
+    background-color: var(--theme-main-color);
+    border-color: var(--theme-border-color);
+    border-width: 2px;
+    border-style: solid;
+    width: 25vw;
+}
+
+.homeButton:hover, .searchButton:hover {
+    color: var(--theme-hover-color);
+    cursor: pointer;
+}
+
+.homeButton:active, .searchButton:active {
+    border-color: white;
+    opacity: .5;
+}
+
+.AppLogo {
+    color: var(--theme-alt-color);
+    display: flex;
+    width: .55em;
+    margin: auto;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.title {
+    color: inherit;
+}
+
+.titleBarMainDiv {
+    padding-right: .5%;
+    background: var(--theme-gradient);
+    z-index: 110;
+    -webkit-user-select: none;
+    user-select: none;
+    scroll-snap-align: start;
+}
+
+.titleBarBackground {
+    background-repeat: 'repeat-x';
+    background-image: url("data:image/svg+xml,%3Csvg fill='currentColor' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cpath d='M 1,16 A 1,1 0 0 1 0,15 V 1 A 1,1 0 0 1 1,0 h 14 a 1,1 0 0 1 1,1 v 14 a 1,1 0 0 1 -1,1 z M 1,12 H 7 V 4 H 1 Z M 9,4 v 8 h 6 V 4 Z M 1,15 H 3 V 13 H 1 Z m 3,-2 v 2 h 2 v -2 z m 3,2 H 9 V 13 H 7 Z m 3,-2 v 2 h 2 v -2 z m 3,2 h 2 V 13 H 13 Z M 1,1 V 3 H 3 V 1 Z M 4,3 H 6 V 1 H 4 Z M 7,1 V 3 H 9 V 1 Z m 3,2 h 2 V 1 h -2 z m 3,-2 v 2 h 2 V 1 Z' id='path1' /%3E%3C/svg%3E");
+    opacity: .1;
+    width: 100%;
+    svg{
+        transform: rotate(90deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .AppLogo {
+        animation: App-logo-spin infinite 5s linear;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes Div-Show {
+    0% { top: -10vh; } 100% { top: 4.1rem; } 
+}
